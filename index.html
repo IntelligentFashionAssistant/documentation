@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-14 Sun 19:37 -->
+<!-- 2021-11-14 Sun 20:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Documentation</title>
+<title>IFA : Intelligent Fashion Assistant</title>
 <meta name="generator" content="Org mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
@@ -223,56 +223,84 @@
 </head>
 <body>
 <div id="content">
-<h1 class="title">Documentation</h1>
+<h1 class="title">IFA : Intelligent Fashion Assistant</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org014e325">1. REST API DESIGN</a></li>
-<li><a href="#orgb3a2f8d">2. DATABASE</a>
+<li><a href="#org2a83861">1. REST API DESIGN</a></li>
+<li><a href="#org39238e6">2. DATABASE</a>
 <ul>
-<li><a href="#org15dec6a">2.1. Database Design</a></li>
+<li><a href="#org1301ff3">2.1. Database Design</a></li>
 </ul>
 </li>
-<li><a href="#org6fdc970">3. FRONTEND ( flutter )</a>
+<li><a href="#orgb5e95ec">3. FRONTEND ( flutter )</a>
 <ul>
-<li><a href="#org8326c85">3.1. Prototype</a>
+<li><a href="#orgacb5eda">3.1. Prototype</a>
 <ul>
-<li><a href="#org240ef86">3.1.1. Signup Page</a></li>
-<li><a href="#org4635941">3.1.2. Login Page</a></li>
-<li><a href="#org80dc645">3.1.3. Home Page</a></li>
-<li><a href="#orga68d1fd">3.1.4. Categories</a></li>
-<li><a href="#org25ceca9">3.1.5. Search Page</a></li>
-<li><a href="#orgc93fe12">3.1.6. Favorites Page</a></li>
-<li><a href="#orgef3abd1">3.1.7. Details Page</a></li>
-<li><a href="#orgb21f551">3.1.8. Profile Page</a></li>
+<li><a href="#org2c3993f">3.1.1. Signup Page</a></li>
+<li><a href="#orga8c5fea">3.1.2. Login Page</a></li>
+<li><a href="#orga8a285e">3.1.3. Home Page</a></li>
+<li><a href="#orgcd303ed">3.1.4. Categories</a></li>
+<li><a href="#orgc952c8c">3.1.5. Search Page</a></li>
+<li><a href="#orgd6c3d3a">3.1.6. Favorites Page</a></li>
+<li><a href="#org7d152b8">3.1.7. Details Page</a></li>
+<li><a href="#org38a39e7">3.1.8. Profile Page</a></li>
 </ul>
 </li>
-<li><a href="#org169642c">3.2. Project Structure</a></li>
+<li><a href="#org559bb61">3.2. Project Structure</a></li>
 </ul>
 </li>
-<li><a href="#org7b61d81">4. BACKEND ( Asp.Net Core )</a>
+<li><a href="#org78a7857">4. BACKEND ( Asp.Net Core )</a>
 <ul>
-<li><a href="#org375ed98">4.1. Arechitectural Design</a></li>
-<li><a href="#orgb806669">4.2. Arechitectural Design Level 2</a></li>
+<li><a href="#org20ad49d">4.1. Arechitectural Design</a></li>
+<li><a href="#org594bb3f">4.2. Arechitectural Design Level 2</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org014e325" class="outline-2">
-<h2 id="org014e325"><span class="section-number-2">1</span> REST API DESIGN</h2>
+<div id="outline-container-org2a83861" class="outline-2">
+<h2 id="org2a83861"><span class="section-number-2">1</span> REST API DESIGN</h2>
+<div class="outline-text-2" id="text-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>end points</b></th>
+<th scope="col" class="org-left"><b>Data</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><i>garments</i></td>
+<td class="org-left">{status: , data: [list of garments ] }</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>garments</i>:id</td>
+<td class="org-left">{status: , data: garment</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="outline-container-orgb3a2f8d" class="outline-2">
-<h2 id="orgb3a2f8d"><span class="section-number-2">2</span> DATABASE</h2>
+</div>
+<div id="outline-container-org39238e6" class="outline-2">
+<h2 id="org39238e6"><span class="section-number-2">2</span> DATABASE</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org15dec6a" class="outline-3">
-<h3 id="org15dec6a"><span class="section-number-3">2.1</span> Database Design</h3>
+<div id="outline-container-org1301ff3" class="outline-3">
+<h3 id="org1301ff3"><span class="section-number-3">2.1</span> Database Design</h3>
 <div class="outline-text-3" id="text-2-1">
 
-<div id="org2965fca" class="figure">
+<div id="orga570ac0" class="figure">
 <p><img src="./assets/db.png" alt="db.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>This is the caption for the next figure link (or table)</p>
@@ -280,96 +308,96 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org6fdc970" class="outline-2">
-<h2 id="org6fdc970"><span class="section-number-2">3</span> FRONTEND ( flutter )</h2>
+<div id="outline-container-orgb5e95ec" class="outline-2">
+<h2 id="orgb5e95ec"><span class="section-number-2">3</span> FRONTEND ( flutter )</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org8326c85" class="outline-3">
-<h3 id="org8326c85"><span class="section-number-3">3.1</span> Prototype</h3>
+<div id="outline-container-orgacb5eda" class="outline-3">
+<h3 id="orgacb5eda"><span class="section-number-3">3.1</span> Prototype</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org240ef86" class="outline-4">
-<h4 id="org240ef86"><span class="section-number-4">3.1.1</span> Signup Page</h4>
+<div id="outline-container-org2c3993f" class="outline-4">
+<h4 id="org2c3993f"><span class="section-number-4">3.1.1</span> Signup Page</h4>
 <div class="outline-text-4" id="text-3-1-1">
 
-<div id="org5fec29c" class="figure">
+<div id="org49a5592" class="figure">
 <p><img src="./frontend/img/signup-page.png" alt="signup-page.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org4635941" class="outline-4">
-<h4 id="org4635941"><span class="section-number-4">3.1.2</span> Login Page</h4>
+<div id="outline-container-orga8c5fea" class="outline-4">
+<h4 id="orga8c5fea"><span class="section-number-4">3.1.2</span> Login Page</h4>
 <div class="outline-text-4" id="text-3-1-2">
 
-<div id="org2ebbb5f" class="figure">
+<div id="orgddf6934" class="figure">
 <p><img src="./frontend/img/login-page.png" alt="login-page.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org80dc645" class="outline-4">
-<h4 id="org80dc645"><span class="section-number-4">3.1.3</span> Home Page</h4>
+<div id="outline-container-orga8a285e" class="outline-4">
+<h4 id="orga8a285e"><span class="section-number-4">3.1.3</span> Home Page</h4>
 <div class="outline-text-4" id="text-3-1-3">
 
-<div id="orgba5ad2b" class="figure">
+<div id="org2cae187" class="figure">
 <p><img src="./frontend/img/HomePage.png" alt="HomePage.png" />
 </p>
 <p><span class="figure-number">Figure 4: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orga68d1fd" class="outline-4">
-<h4 id="orga68d1fd"><span class="section-number-4">3.1.4</span> Categories</h4>
+<div id="outline-container-orgcd303ed" class="outline-4">
+<h4 id="orgcd303ed"><span class="section-number-4">3.1.4</span> Categories</h4>
 <div class="outline-text-4" id="text-3-1-4">
 
-<div id="org6410875" class="figure">
+<div id="org9071aa3" class="figure">
 <p><img src="./frontend/img/categories.png" alt="categories.png" />
 </p>
 <p><span class="figure-number">Figure 5: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org25ceca9" class="outline-4">
-<h4 id="org25ceca9"><span class="section-number-4">3.1.5</span> Search Page</h4>
+<div id="outline-container-orgc952c8c" class="outline-4">
+<h4 id="orgc952c8c"><span class="section-number-4">3.1.5</span> Search Page</h4>
 <div class="outline-text-4" id="text-3-1-5">
 
-<div id="org4c5aba8" class="figure">
+<div id="orgafb0289" class="figure">
 <p><img src="./frontend/img/search-page.png" alt="search-page.png" />
 </p>
 <p><span class="figure-number">Figure 6: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc93fe12" class="outline-4">
-<h4 id="orgc93fe12"><span class="section-number-4">3.1.6</span> Favorites Page</h4>
+<div id="outline-container-orgd6c3d3a" class="outline-4">
+<h4 id="orgd6c3d3a"><span class="section-number-4">3.1.6</span> Favorites Page</h4>
 <div class="outline-text-4" id="text-3-1-6">
 
-<div id="org82daf32" class="figure">
+<div id="org67be46e" class="figure">
 <p><img src="./frontend/img/likes-page.png" alt="likes-page.png" />
 </p>
 <p><span class="figure-number">Figure 7: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgef3abd1" class="outline-4">
-<h4 id="orgef3abd1"><span class="section-number-4">3.1.7</span> Details Page</h4>
+<div id="outline-container-org7d152b8" class="outline-4">
+<h4 id="org7d152b8"><span class="section-number-4">3.1.7</span> Details Page</h4>
 <div class="outline-text-4" id="text-3-1-7">
 
-<div id="org3eab8db" class="figure">
+<div id="orgcdfefcb" class="figure">
 <p><img src="./frontend/img/details.png" alt="details.png" />
 </p>
 <p><span class="figure-number">Figure 8: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb21f551" class="outline-4">
-<h4 id="orgb21f551"><span class="section-number-4">3.1.8</span> Profile Page</h4>
+<div id="outline-container-org38a39e7" class="outline-4">
+<h4 id="org38a39e7"><span class="section-number-4">3.1.8</span> Profile Page</h4>
 <div class="outline-text-4" id="text-3-1-8">
 
-<div id="org434e5e1" class="figure">
+<div id="org153779e" class="figure">
 <p><img src="./frontend/img/profile.png" alt="profile.png" />
 </p>
 <p><span class="figure-number">Figure 9: </span>This is the caption for the next figure link (or table)</p>
@@ -378,11 +406,11 @@
 </div>
 </div>
 
-<div id="outline-container-org169642c" class="outline-3">
-<h3 id="org169642c"><span class="section-number-3">3.2</span> Project Structure</h3>
+<div id="outline-container-org559bb61" class="outline-3">
+<h3 id="org559bb61"><span class="section-number-3">3.2</span> Project Structure</h3>
 <div class="outline-text-3" id="text-3-2">
 
-<div id="org0d2d346" class="figure">
+<div id="orgf90b693" class="figure">
 <p><img src="./frontend/img/filestructure.png" alt="filestructure.png" />
 </p>
 <p><span class="figure-number">Figure 10: </span>This is the caption for the next figure link (or table)</p>
@@ -391,15 +419,15 @@
 </div>
 </div>
 
-<div id="outline-container-org7b61d81" class="outline-2">
-<h2 id="org7b61d81"><span class="section-number-2">4</span> BACKEND ( Asp.Net Core )</h2>
+<div id="outline-container-org78a7857" class="outline-2">
+<h2 id="org78a7857"><span class="section-number-2">4</span> BACKEND ( Asp.Net Core )</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org375ed98" class="outline-3">
-<h3 id="org375ed98"><span class="section-number-3">4.1</span> Arechitectural Design</h3>
+<div id="outline-container-org20ad49d" class="outline-3">
+<h3 id="org20ad49d"><span class="section-number-3">4.1</span> Arechitectural Design</h3>
 <div class="outline-text-3" id="text-4-1">
 
-<div id="org3b0ff6a" class="figure">
+<div id="org018da39" class="figure">
 <p><img src="./backend/img/architecture.png" alt="architecture.png" />
 </p>
 <p><span class="figure-number">Figure 11: </span>This is the caption for the next figure link (or table)</p>
@@ -407,11 +435,11 @@
 </div>
 </div>
 
-<div id="outline-container-orgb806669" class="outline-3">
-<h3 id="orgb806669"><span class="section-number-3">4.2</span> Arechitectural Design Level 2</h3>
+<div id="outline-container-org594bb3f" class="outline-3">
+<h3 id="org594bb3f"><span class="section-number-3">4.2</span> Arechitectural Design Level 2</h3>
 <div class="outline-text-3" id="text-4-2">
 
-<div id="orgac21319" class="figure">
+<div id="org3f21e2f" class="figure">
 <p><img src="./backend/img/architecture-level2.png" alt="architecture-level2.png" />
 </p>
 <p><span class="figure-number">Figure 12: </span>This is the caption for the next figure link (or table)</p>
@@ -421,7 +449,7 @@
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2021-11-14 Sun 19:37</p>
+<p class="date">Created: 2021-11-14 Sun 20:26</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
