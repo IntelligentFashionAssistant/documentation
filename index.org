@@ -1,11 +1,59 @@
 #+TITLE: Documentation
 #+SETUPFILE: /home/moamen/new-git/ifa/documentation/assets/theme/theme-readtheorg-local.setup
 
-* Design 
+* REST API DESIGN
+* DATABASE
 ** Database Design
 #+CAPTION: This is the caption for the next figure link (or table)
 #+NAME:   fig:SED-HR4049
-#+attr_html: :width 100%
 [[./assets/db.png]]
-** API Design
-** Frontend Design 
+* FRONTEND ( flutter )  
+** Prototype 
+*** Signup Page 
+#+CAPTION: This is the caption for the next figure link (or table)
+#+NAME:   fig:SED-HR4049
+[[./frontend/img/signup-page.png]]
+*** Login Page
+#+CAPTION: This is the caption for the next figure link (or table)
+#+NAME:   fig:SED-HR4049
+[[./frontend/img/login-page.png]]
+*** Home Page
+#+CAPTION: This is the caption for the next figure link (or table)
+#+NAME:   fig:SED-HR4049
+[[./frontend/img/HomePage.png]]
+*** Categories 
+#+CAPTION: This is the caption for the next figure link (or table)
+#+NAME:   fig:SED-HR4049
+[[./frontend/img/categories.png]]
+*** Search Page
+#+CAPTION: This is the caption for the next figure link (or table)
+#+NAME:   fig:SED-HR4049
+[[./frontend/img/search-page.png]]
+*** Favorites Page
+#+CAPTION: This is the caption for the next figure link (or table)
+#+NAME:   fig:SED-HR4049
+[[./frontend/img/likes-page.png]]
+*** Details Page
+#+CAPTION: This is the caption for the next figure link (or table)
+#+NAME:   fig:SED-HR4049
+[[./frontend/img/details.png]]
+*** Profile Page
+#+CAPTION: This is the caption for the next figure link (or table)
+#+NAME:   fig:SED-HR4049
+[[./frontend/img/profile.png]]
+
+** Project Structure 
+#+CAPTION: This is the caption for the next figure link (or table)
+#+NAME:   fig:SED-HR4049
+[[./frontend/img/filestructure.png]]
+
+* BACKEND ( Asp.Net Core ) 
+** Arechitectural Design 
+#+CAPTION: This is the caption for the next figure link (or table)
+#+NAME:   fig:SED-HR4049
+[[./backend/img/architecture.png]]
+
+** Arechitectural Design Level 2
+#+CAPTION: This is the caption for the next figure link (or table)
+#+NAME:   fig:SED-HR4049
+[[./backend/img/architecture-level2.png]]
