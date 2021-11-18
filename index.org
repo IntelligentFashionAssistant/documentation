@@ -2,18 +2,18 @@
 #+SETUPFILE: /home/moamen/new-git/ifa/documentation/assets/theme/theme-readtheorg-local.setup
 
 * REST API DESIGN
-|---------------+----------------------------------------|
-| *end points*  | *Data*                                 |
-|---------------+----------------------------------------|
-| /garments/    | {status: , data: [list of garments ] } |
-| /garments/:id | {status: , data: garment               |
-|---------------+----------------------------------------|
+|-----------------+----------------------------------------|
+| *end points*    | *Data*                                 |
+|-----------------+----------------------------------------|
+| \/garments\/    | {status: , data: [list of garments ] } |
+| \/garments\/:id | {status: , data: garment}              |
+|-----------------+----------------------------------------|
 * DATABASE
 ** Database Design
 #+CAPTION: This is the caption for the next figure link (or table)
 #+NAME:   fig:SED-HR4049
 [[./assets/db.png]]
-* FRONTEND ( flutter )  
+* FRONTEND ( flutter )
 ** Prototype 
 *** Signup Page 
 #+CAPTION: This is the caption for the next figure link (or table)
