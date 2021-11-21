@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-21 Sun 09:43 -->
+<!-- 2021-11-21 Sun 22:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>IFA : Intelligent Fashion Assistant</title>
@@ -228,55 +228,69 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org73909a5">1. TASKS</a>
+<li><a href="#orgc063ffc">1. TASKS</a>
 <ul>
-<li><a href="#orgb7d98b5">1.1. <span class="todo __TODO"> TODO</span> rest api design</a></li>
-<li><a href="#org91753f6">1.2. <span class="todo __TODO"> TODO</span> interface design</a></li>
-<li><a href="#org37a2b0c">1.3. integration test</a></li>
+<li><a href="#orgf1d4216">1.1. <span class="todo __TODO"> TODO</span> rest api design</a></li>
+<li><a href="#orgb1447fe">1.2. <span class="todo __TODO"> TODO</span> interface design</a></li>
+<li><a href="#orgf5e9bf6">1.3. <span class="todo __TODO"> TODO</span> frontend widget to insert garments</a></li>
+<li><a href="#org4269f90">1.4. <span class="todo __TODO"> TODO</span> frontend widget to filter results</a></li>
+<li><a href="#orga0380a1">1.5. <span class="todo __TODO"> TODO</span> add garment fk to propertyfeedback</a></li>
+<li><a href="#orge1320c7">1.6. integration test</a></li>
 </ul>
 </li>
-<li><a href="#orgb753608">2. REST API DESIGN</a>
+<li><a href="#org4d31a74">2. REST API DESIGN</a>
 <ul>
-<li><a href="#org39d6d2c">2.1. entities</a>
+<li><a href="#org071bfde">2.1. general</a></li>
+<li><a href="#orgf7ef75d">2.2. mobile client</a>
 <ul>
-<li><a href="#org9ccc520">2.1.1. UserEntity</a></li>
-<li><a href="#org9bfe454">2.1.2. BodySizesEntity</a></li>
-<li><a href="#org86300a8">2.1.3. GarmentEntity</a></li>
+<li><a href="#orgf858b7a">2.2.1. entities</a></li>
+<li><a href="#orgab53cb6">2.2.2. end points</a></li>
 </ul>
 </li>
-<li><a href="#org1919efb">2.2. problems</a></li>
-<li><a href="#org9f63736">2.3. End points</a></li>
+<li><a href="#orgb7fbf6d">2.3. web client (shopowner)</a>
+<ul>
+<li><a href="#org8128fc0">2.3.1. entities</a></li>
+<li><a href="#org36801ed">2.3.2. end points</a></li>
 </ul>
 </li>
-<li><a href="#org9ec8eaf">3. DATABASE</a>
+<li><a href="#org526d067">2.4. web client (admin)</a>
 <ul>
-<li><a href="#org8ef63c0">3.1. Database Design</a></li>
+<li><a href="#orgba834ae">2.4.1. entities</a></li>
+<li><a href="#orgdb3b4a3">2.4.2. end points</a></li>
 </ul>
 </li>
-<li><a href="#orgc99174b">4. FRONTEND ( flutter )</a>
-<ul>
-<li><a href="#orgbd629b4">4.1. Prototype</a>
-<ul>
-<li><a href="#orge3c0290">4.1.1. Signup Page</a></li>
-<li><a href="#org959c1db">4.1.2. Login Page</a></li>
-<li><a href="#orgdfff14d">4.1.3. Home Page</a></li>
-<li><a href="#org84a12db">4.1.4. Categories</a></li>
-<li><a href="#orge712b8f">4.1.5. Search Page</a></li>
-<li><a href="#orgf2ca619">4.1.6. Favorites Page</a></li>
-<li><a href="#org06d0623">4.1.7. Details Page</a></li>
-<li><a href="#orgd271c67">4.1.8. Profile Page</a></li>
+<li><a href="#org8d57792">2.5. Questions</a></li>
 </ul>
 </li>
-<li><a href="#org832de5f">4.2. Project Structure</a></li>
+<li><a href="#org80f582c">3. DATABASE</a>
+<ul>
+<li><a href="#orge555e1d">3.1. Database Design</a></li>
 </ul>
 </li>
-<li><a href="#orgac40882">5. BACKEND ( Asp.Net Core )</a>
+<li><a href="#org2e901c1">4. FRONTEND ( flutter )</a>
 <ul>
-<li><a href="#orgcc25ee5">5.1. Arechitectural Design</a></li>
-<li><a href="#orgd70d8d9">5.2. Arechitectural Design Level 2</a></li>
-<li><a href="#org419d986">5.3. Business Logic</a>
+<li><a href="#org598a6ff">4.1. Prototype</a>
 <ul>
-<li><a href="#orga743556">5.3.1. background process</a></li>
+<li><a href="#orgf6c9735">4.1.1. Signup Page</a></li>
+<li><a href="#org5d50b98">4.1.2. Login Page</a></li>
+<li><a href="#orga078a64">4.1.3. Home Page</a></li>
+<li><a href="#org09dab24">4.1.4. Categories</a></li>
+<li><a href="#orgb8b4e88">4.1.5. Search Page</a></li>
+<li><a href="#orgcf1cf70">4.1.6. Favorites Page</a></li>
+<li><a href="#org7da14af">4.1.7. Details Page</a></li>
+<li><a href="#orgb28b552">4.1.8. Profile Page</a></li>
+</ul>
+</li>
+<li><a href="#orgad862dd">4.2. Project Structure</a></li>
+</ul>
+</li>
+<li><a href="#org83b7b27">5. BACKEND ( Asp.Net Core )</a>
+<ul>
+<li><a href="#orga090c07">5.1. Arechitectural Design</a></li>
+<li><a href="#org4e372a8">5.2. Arechitectural Design Level 2</a></li>
+<li><a href="#org7db6c7a">5.3. Business Logic</a>
+<ul>
+<li><a href="#orgb2cd792">5.3.1. background process</a></li>
 </ul>
 </li>
 </ul>
@@ -285,116 +299,218 @@
 </div>
 </div>
 
-<div id="outline-container-org73909a5" class="outline-2">
-<h2 id="org73909a5"><span class="section-number-2">1</span> TASKS</h2>
+<div id="outline-container-orgc063ffc" class="outline-2">
+<h2 id="orgc063ffc"><span class="section-number-2">1</span> TASKS</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgb7d98b5" class="outline-3">
-<h3 id="orgb7d98b5"><span class="section-number-3">1.1</span> <span class="todo __TODO"> TODO</span> rest api design</h3>
+<div id="outline-container-orgf1d4216" class="outline-3">
+<h3 id="orgf1d4216"><span class="section-number-3">1.1</span> <span class="todo __TODO"> TODO</span> rest api design</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
 </div>
-<div id="outline-container-org91753f6" class="outline-3">
-<h3 id="org91753f6"><span class="section-number-3">1.2</span> <span class="todo __TODO"> TODO</span> interface design</h3>
+<div id="outline-container-orgb1447fe" class="outline-3">
+<h3 id="orgb1447fe"><span class="section-number-3">1.2</span> <span class="todo __TODO"> TODO</span> interface design</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
 </div>
-<div id="outline-container-org37a2b0c" class="outline-3">
-<h3 id="org37a2b0c"><span class="section-number-3">1.3</span> integration test</h3>
+<div id="outline-container-orgf5e9bf6" class="outline-3">
+<h3 id="orgf5e9bf6"><span class="section-number-3">1.3</span> <span class="todo __TODO"> TODO</span> frontend widget to insert garments</h3>
+<div class="outline-text-3" id="text-1-3">
 </div>
 </div>
-<div id="outline-container-orgb753608" class="outline-2">
-<h2 id="orgb753608"><span class="section-number-2">2</span> REST API DESIGN</h2>
+<div id="outline-container-org4269f90" class="outline-3">
+<h3 id="org4269f90"><span class="section-number-3">1.4</span> <span class="todo __TODO"> TODO</span> frontend widget to filter results</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+</div>
+<div id="outline-container-orga0380a1" class="outline-3">
+<h3 id="orga0380a1"><span class="section-number-3">1.5</span> <span class="todo __TODO"> TODO</span> add garment fk to propertyfeedback</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+</div>
+<div id="outline-container-orge1320c7" class="outline-3">
+<h3 id="orge1320c7"><span class="section-number-3">1.6</span> integration test</h3>
+</div>
+</div>
+<div id="outline-container-org4d31a74" class="outline-2">
+<h2 id="org4d31a74"><span class="section-number-2">2</span> REST API DESIGN</h2>
 <div class="outline-text-2" id="text-2">
-<p>
-response : {data:{}, status:}
-</p>
 </div>
-<div id="outline-container-org39d6d2c" class="outline-3">
-<h3 id="org39d6d2c"><span class="section-number-3">2.1</span> entities</h3>
+<div id="outline-container-org071bfde" class="outline-3">
+<h3 id="org071bfde"><span class="section-number-3">2.1</span> general</h3>
 <div class="outline-text-3" id="text-2-1">
-</div>
-<div id="outline-container-org9ccc520" class="outline-4">
-<h4 id="org9ccc520"><span class="section-number-4">2.1.1</span> UserEntity</h4>
-<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>each message should look like</li>
+</ul>
 <div class="org-src-container">
-<pre class="src src-js"><span style="color: #458588;">{</span>
-    <span style="color: #b8bb26;">"email"</span>:<span style="color: #b8bb26;">"moamen@gmail.com"</span>,
-    <span style="color: #b8bb26;">"password"</span>:<span style="color: #b8bb26;">"aamm-1970"</span>,
-    <span style="color: #b8bb26;">"firstname"</span>:<span style="color: #b8bb26;">"moamen"</span>,
-    <span style="color: #b8bb26;">"lastname"</span>:<span style="color: #b8bb26;">"hraden"</span>,
-    <span style="color: #b8bb26;">"birthdate"</span>:<span style="color: #b8bb26;">"1997-05-01"</span>,
-    <span style="color: #b8bb26;">"country"</span>:<span style="color: #b8bb26;">"jordan"</span>,
-    <span style="color: #b8bb26;">"city"</span>:<span style="color: #b8bb26;">"amman"</span>,
-    <span style="color: #b8bb26;">"street"</span>:<span style="color: #b8bb26;">"mainStreet"</span>,
-    <span style="color: #b8bb26;">"hausnumber"</span>:34
-<span style="color: #458588;">}</span>
+<pre class="src src-js"><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"status"</span>:<span style="color: #ffd866;">"success"</span>|<span style="color: #ffd866;">"failure"</span>,
+    <span style="color: #ffd866;">"message"</span>:<span style="color: #ffd866;">"ex: user does not exist"</span>,
+    <span style="color: #ffd866;">"data"</span> : <span style="color: #ff6188;">{</span>...<span style="color: #ff6188;">}</span> | <span style="color: #ff6188;">[</span> <span style="color: #fc9867;">{}</span> ... <span style="color: #fc9867;">{}</span><span style="color: #ff6188;">]</span>
+<span style="color: #ff6188;">}</span>
 </pre>
 </div>
 </div>
 </div>
+<div id="outline-container-orgf7ef75d" class="outline-3">
+<h3 id="orgf7ef75d"><span class="section-number-3">2.2</span> mobile client</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-orgf858b7a" class="outline-4">
+<h4 id="orgf858b7a"><span class="section-number-4">2.2.1</span> entities</h4>
+<div class="outline-text-4" id="text-2-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org9be663b"></a>status ref#0<br />
+<div class="outline-text-5" id="text-2-2-1-1">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"status"</span>:<span style="color: #ffd866;">"SUCCESS"</span>
+<span style="color: #ff6188;">}</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org4c0d35d"></a>User ref#1<br />
+<div class="outline-text-5" id="text-2-2-1-2">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"userId"</span>:0,
+    <span style="color: #ffd866;">"email"</span>:<span style="color: #ffd866;">"moamen@gmail.com"</span>,
+    <span style="color: #ffd866;">"password"</span>:<span style="color: #ffd866;">"hashed password"</span>,
+    <span style="color: #ffd866;">"firstname"</span>:<span style="color: #ffd866;">"moamen"</span>,
+    <span style="color: #ffd866;">"lastname"</span>:<span style="color: #ffd866;">"hraden"</span>,
+    <span style="color: #ffd866;">"birthdate"</span>:<span style="color: #ffd866;">"1997-05-01"</span>,
+    <span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>,
+    <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>,
+    <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"mainStreet"</span>,
+    <span style="color: #ffd866;">"hausnumber"</span>:34
+<span style="color: #ff6188;">}</span>
+</pre>
+</div>
+</div>
+</li>
 
-<div id="outline-container-org9bfe454" class="outline-4">
-<h4 id="org9bfe454"><span class="section-number-4">2.1.2</span> BodySizesEntity</h4>
-<div class="outline-text-4" id="text-2-1-2">
+<li><a id="org62133b4"></a>login data ref#2<br />
+<div class="outline-text-5" id="text-2-2-1-3">
 <div class="org-src-container">
-<pre class="src src-js"><span style="color: #458588;">{</span>
-    <span style="color: #b8bb26;">"shoulder"</span>: 20, 
-    <span style="color: #b8bb26;">"bust"</span>:20, 
-    <span style="color: #b8bb26;">"hip"</span>:20,
-    <span style="color: #b8bb26;">"waist"</span>:20
-<span style="color: #458588;">}</span>
+<pre class="src src-js"><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"email"</span>: <span style="color: #ffd866;">"TheSuperAdminKenan@gmail.com"</span>,
+    <span style="color: #ffd866;">"password"</span>:<span style="color: #ffd866;">"hased password"</span>
+<span style="color: #ff6188;">}</span>
+
 </pre>
 </div>
 </div>
-</div>
-<div id="outline-container-org86300a8" class="outline-4">
-<h4 id="org86300a8"><span class="section-number-4">2.1.3</span> GarmentEntity</h4>
-<div class="outline-text-4" id="text-2-1-3">
+</li>
+<li><a id="org542da6f"></a>login token ref#3<br />
+<div class="outline-text-5" id="text-2-2-1-4">
 <div class="org-src-container">
-<pre class="src src-js"><span style="color: #458588;">{</span>
-    <span style="color: #b8bb26;">"name"</span>: <span style="color: #b8bb26;">"something"</span>, 
-    <span style="color: #b8bb26;">"description"</span>: <span style="color: #b8bb26;">"long sleeve"</span>, 
-    <span style="color: #b8bb26;">"brand"</span>:<span style="color: #b8bb26;">"addidas"</span>, 
-    <span style="color: #b8bb26;">"price"</span>: 1000.99
-    <span style="color: #b8bb26;">"images"</span>: <span style="color: #b16286;">[</span>
+<pre class="src src-js"><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"status"</span>:<span style="color: #ffd866;">"success"</span>,
+    <span style="color: #ffd866;">"token"</span>:<span style="color: #ffd866;">"AOLDKJFAOSLDKFJAOLDFKJA"</span>
+<span style="color: #ff6188;">}</span>
+
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org5b81de0"></a>User with his body sizes ref#4<br />
+<div class="outline-text-5" id="text-2-2-1-5">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"userId"</span>:0,
+    <span style="color: #ffd866;">"email"</span>:<span style="color: #ffd866;">"moamen@gmail.com"</span>,
+    <span style="color: #ffd866;">"password"</span>:<span style="color: #ffd866;">"hashed password"</span>,
+    <span style="color: #ffd866;">"firstname"</span>:<span style="color: #ffd866;">"moamen"</span>,
+    <span style="color: #ffd866;">"lastname"</span>:<span style="color: #ffd866;">"hraden"</span>,
+    <span style="color: #ffd866;">"birthdate"</span>:<span style="color: #ffd866;">"1997-05-01"</span>,
+    <span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>,
+    <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>,
+    <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"mainStreet"</span>,
+    <span style="color: #ffd866;">"hausnumber"</span>:34,
+    <span style="color: #ffd866;">"bodysizes"</span>:<span style="color: #ff6188;">{</span>
+        <span style="color: #ffd866;">"userId"</span>:1,
+        <span style="color: #ffd866;">"shoulder"</span>: 20, 
+        <span style="color: #ffd866;">"bust"</span>:20, 
+        <span style="color: #ffd866;">"hip"</span>:20,
+        <span style="color: #ffd866;">"waist"</span>:20
+    <span style="color: #ff6188;">}</span>
+<span style="color: #ff6188;">}</span>
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgfb4e890"></a>Garment  ref#5<br />
+<div class="outline-text-5" id="text-2-2-1-6">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">[</span><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"name"</span>: <span style="color: #ffd866;">"something"</span>, 
+    <span style="color: #ffd866;">"description"</span>: <span style="color: #ffd866;">"long sleeve"</span>, 
+    <span style="color: #ffd866;">"brand"</span>:<span style="color: #ffd866;">"addidas"</span>, 
+    <span style="color: #ffd866;">"price"</span>: 1000.99,
+    <span style="color: #ffd866;">"category"</span>:<span style="color: #ffd866;">"top"</span>,
+    <span style="color: #ffd866;">"images"</span>: <span style="color: #fc9867;">[</span>
         image1, 
         image2 
-    <span style="color: #b16286;">]</span>,
-    <span style="color: #b8bb26;">"stores"</span>: <span style="color: #b16286;">[</span>
-        <span style="color: #8ec07c;">{</span> <span style="color: #b8bb26;">"name"</span>:<span style="color: #b8bb26;">"somestore"</span>, 
-          <span style="color: #b8bb26;">"location"</span>:<span style="color: #d65d0e;">[</span>
-              <span style="color: #458588;">{</span><span style="color: #b8bb26;">"country"</span>:<span style="color: #b8bb26;">"jordan"</span>, <span style="color: #b8bb26;">"city"</span>:<span style="color: #b8bb26;">"amman"</span>, <span style="color: #b8bb26;">"street"</span>:<span style="color: #b8bb26;">"somestreet"</span>, <span style="color: #b8bb26;">"housenumber"</span>:34<span style="color: #458588;">}</span>,
-              <span style="color: #458588;">{</span><span style="color: #b8bb26;">"country"</span>:<span style="color: #b8bb26;">"jordan"</span>, <span style="color: #b8bb26;">"city"</span>:<span style="color: #b8bb26;">"amman"</span>, <span style="color: #b8bb26;">"street"</span>:<span style="color: #b8bb26;">"somestreet"</span>, <span style="color: #b8bb26;">"housenumber"</span>:34<span style="color: #458588;">}</span>
-          <span style="color: #d65d0e;">]</span>
-        <span style="color: #8ec07c;">}</span>,
-        <span style="color: #8ec07c;">{</span> <span style="color: #b8bb26;">"name"</span>:<span style="color: #b8bb26;">"somestore2"</span>, 
-          <span style="color: #b8bb26;">"location"</span>:<span style="color: #d65d0e;">[</span>
-              <span style="color: #458588;">{</span><span style="color: #b8bb26;">"country"</span>:<span style="color: #b8bb26;">"jordan"</span>, <span style="color: #b8bb26;">"city"</span>:<span style="color: #b8bb26;">"amman"</span>, <span style="color: #b8bb26;">"street"</span>:<span style="color: #b8bb26;">"somestreet"</span>, <span style="color: #b8bb26;">"housenumber"</span>:34<span style="color: #458588;">}</span>,
-              <span style="color: #458588;">{</span><span style="color: #b8bb26;">"country"</span>:<span style="color: #b8bb26;">"jordan"</span>, <span style="color: #b8bb26;">"city"</span>:<span style="color: #b8bb26;">"amman"</span>, <span style="color: #b8bb26;">"street"</span>:<span style="color: #b8bb26;">"somestreet"</span>, <span style="color: #b8bb26;">"housenumber"</span>:34<span style="color: #458588;">}</span>
-          <span style="color: #d65d0e;">]</span>
-        <span style="color: #8ec07c;">}</span>
-    <span style="color: #b16286;">]</span>
+    <span style="color: #fc9867;">]</span>,
+    <span style="color: #ffd866;">"stores"</span>: <span style="color: #fc9867;">[</span>
+        <span style="color: #ffd866;">{</span> <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"somestore"</span>, 
+          <span style="color: #ffd866;">"location"</span>:<span style="color: #a9dc76;">[</span>
+              <span style="color: #78dce8;">{</span><span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>, <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>, <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"somestreet"</span>, <span style="color: #ffd866;">"housenumber"</span>:34<span style="color: #78dce8;">}</span>,
+              <span style="color: #78dce8;">{</span><span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>, <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>, <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"somestreet"</span>, <span style="color: #ffd866;">"housenumber"</span>:34<span style="color: #78dce8;">}</span>
+          <span style="color: #a9dc76;">]</span>
+        <span style="color: #ffd866;">}</span>,
+        <span style="color: #ffd866;">{</span> <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"somestore2"</span>, 
+          <span style="color: #ffd866;">"location"</span>:<span style="color: #a9dc76;">[</span>
+              <span style="color: #78dce8;">{</span><span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>, <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>, <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"somestreet"</span>, <span style="color: #ffd866;">"housenumber"</span>:34<span style="color: #78dce8;">}</span>,
+              <span style="color: #78dce8;">{</span><span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>, <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>, <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"somestreet"</span>, <span style="color: #ffd866;">"housenumber"</span>:34<span style="color: #78dce8;">}</span>
+          <span style="color: #a9dc76;">]</span>
+        <span style="color: #ffd866;">}</span>
+    <span style="color: #fc9867;">]</span>
 
-<span style="color: #458588;">}</span>
+<span style="color: #ff6188;">}</span><span style="color: #ff6188;">]</span>
 </pre>
 </div>
 </div>
+</li>
+
+<li><a id="orgbfa1c4a"></a>GarmentRating ref#6<br />
+<div class="outline-text-5" id="text-2-2-1-7">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"userId"</span>:1, 
+    <span style="color: #ffd866;">"garmentId"</span>:1,
+    <span style="color: #ffd866;">"rating"</span>:<span style="color: #ff6188;">[</span>
+        <span style="color: #fc9867;">{</span><span style="color: #ffd866;">"propertyId"</span>:1, <span style="color: #ffd866;">"rating"</span>:50%<span style="color: #fc9867;">}</span>,
+        <span style="color: #fc9867;">{</span><span style="color: #ffd866;">"propertyId"</span>:2, <span style="color: #ffd866;">"rating"</span>:40%<span style="color: #fc9867;">}</span>,
+        <span style="color: #fc9867;">{</span><span style="color: #ffd866;">"propertyId"</span>:3, <span style="color: #ffd866;">"rating"</span>:70%<span style="color: #fc9867;">}</span>
+    <span style="color: #ff6188;">]</span>
+<span style="color: #ff6188;">}</span>
+</pre>
 </div>
+</div>
+</li>
+<li><a id="orga45d492"></a>StoreRating ref#7<br />
+<div class="outline-text-5" id="text-2-2-1-8">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"storeId"</span>:1,
+    <span style="color: #ffd866;">"header"</span>:<span style="color: #ffd866;">"very good"</span>,
+    <span style="color: #ffd866;">"body"</span>: <span style="color: #ffd866;">"it is realy very goood :) "</span>,
+    <span style="color: #ffd866;">"rating"</span>:50%
+<span style="color: #ff6188;">}</span>
+</pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 
-<div id="outline-container-org1919efb" class="outline-3">
-<h3 id="org1919efb"><span class="section-number-3">2.2</span> problems</h3>
-<div class="outline-text-3" id="text-2-2">
-<ul class="org-ul">
-<li>put vs patch</li>
-<li>get vs post</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org9f63736" class="outline-3">
-<h3 id="org9f63736"><span class="section-number-3">2.3</span> End points</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-orgab53cb6" class="outline-4">
+<h4 id="orgab53cb6"><span class="section-number-4">2.2.2</span> end points</h4>
+<div class="outline-text-4" id="text-2-2-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -417,82 +533,504 @@ response : {data:{}, status:}
 </thead>
 <tbody>
 <tr>
-<td class="org-left">post</td>
-<td class="org-left">/user/register</td>
-<td class="org-left">body(UserEntity)</td>
-<td class="org-left">status:success</td>
+<td class="org-left">POST</td>
+<td class="org-left">\/user\/register</td>
+<td class="org-left">body(ref#1)</td>
+<td class="org-left">ref#0</td>
 </tr>
 
 <tr>
-<td class="org-left">post</td>
-<td class="org-left">/user/login</td>
-<td class="org-left">body(email, password)</td>
-<td class="org-left">data: token, status:success</td>
+<td class="org-left">POST</td>
+<td class="org-left">\/user\/login</td>
+<td class="org-left">body(ref#2)</td>
+<td class="org-left">ref#3</td>
 </tr>
 
 <tr>
-<td class="org-left">put (patch??)</td>
-<td class="org-left"><i>user</i></td>
-<td class="org-left">body(Userentity, UserId)</td>
-<td class="org-left">status:success</td>
+<td class="org-left">PUT</td>
+<td class="org-left">\/user\/</td>
+<td class="org-left">body(ref#4)</td>
+<td class="org-left">ref#0</td>
 </tr>
 
 <tr>
-<td class="org-left">post</td>
-<td class="org-left">/user/profile</td>
-<td class="org-left">body(bodySizesentity, UserId)</td>
-<td class="org-left">status:success</td>
-</tr>
-
-<tr>
-<td class="org-left">get</td>
-<td class="org-left">/user/profile</td>
-<td class="org-left">parameters(UserId)</td>
-<td class="org-left">userentity, Bodysizesentity</td>
-</tr>
-
-<tr>
-<td class="org-left">put</td>
-<td class="org-left">/user/profile</td>
-<td class="org-left">body(bodysizesentity, UserId)</td>
-<td class="org-left">status:success</td>
+<td class="org-left">GET</td>
+<td class="org-left">\/user\/</td>
+<td class="org-left">parameters(UserId=)</td>
+<td class="org-left">ref#4</td>
 </tr>
 </tbody>
 <tbody>
 <tr>
-<td class="org-left">get</td>
-<td class="org-left"><i>garment</i>:UserId</td>
+<td class="org-left">GET</td>
+<td class="org-left">\/garment\/</td>
 <td class="org-left">__</td>
-<td class="org-left">list of Garmententity</td>
+<td class="org-left">ref#5</td>
 </tr>
 
 <tr>
-<td class="org-left">get</td>
-<td class="org-left"><i>garment</i>:UserId</td>
-<td class="org-left">parameters(category=)</td>
-<td class="org-left">list of Garmententity</td>
+<td class="org-left">GET</td>
+<td class="org-left">\/garment\/</td>
+<td class="org-left">parameters(UserId=, category=, Searchkeyword=)</td>
+<td class="org-left">ref#5</td>
 </tr>
 
 <tr>
-<td class="org-left">get</td>
-<td class="org-left"><i>garment</i>:UserId</td>
-<td class="org-left">parameters(searchkeyword=)</td>
-<td class="org-left">list of Garmententity</td>
+<td class="org-left">POST</td>
+<td class="org-left">\/garment\/rate</td>
+<td class="org-left">body(ref#6)</td>
+<td class="org-left">ref#0</td>
+</tr>
+
+<tr>
+<td class="org-left">POST</td>
+<td class="org-left">\/store\/rate</td>
+<td class="org-left">body(ref#7)</td>
+<td class="org-left">ref#0</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<div id="outline-container-org9ec8eaf" class="outline-2">
-<h2 id="org9ec8eaf"><span class="section-number-2">3</span> DATABASE</h2>
+
+<div id="outline-container-orgb7fbf6d" class="outline-3">
+<h3 id="orgb7fbf6d"><span class="section-number-3">2.3</span> web client (shopowner)</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-org8128fc0" class="outline-4">
+<h4 id="org8128fc0"><span class="section-number-4">2.3.1</span> entities</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="org92ed648"></a>status ref#0<br />
+<div class="outline-text-5" id="text-2-3-1-1">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"status"</span>:<span style="color: #ffd866;">"SUCCESS"</span>
+<span style="color: #ff6188;">}</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org6736658"></a>categories ref#1<br />
+<div class="outline-text-5" id="text-2-3-1-2">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">[</span>
+    <span style="color: #ff6188;">{</span><span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"TOP"</span>, <span style="color: #ffd866;">"description"</span>:<span style="color: #ffd866;">"description of top"</span><span style="color: #ff6188;">}</span>,
+    <span style="color: #ff6188;">{</span><span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"PANTS"</span>, <span style="color: #ffd866;">"description"</span>:<span style="color: #ffd866;">"description of pants"</span><span style="color: #ff6188;">}</span>
+<span style="color: #ff6188;">]</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgab9f29c"></a>groups and properties ref#2<br />
+<div class="outline-text-5" id="text-2-3-1-3">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">[</span>
+    <span style="color: #ff6188;">{</span>
+        <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"neckline"</span>,
+        <span style="color: #ffd866;">"description"</span>:<span style="color: #ffd866;">"something about neckline"</span>,
+        <span style="color: #ffd866;">"properties"</span>:<span style="color: #fc9867;">[</span>
+            <span style="color: #ffd866;">{</span><span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"V-Neck"</span>, <span style="color: #ffd866;">"description"</span>:<span style="color: #ffd866;">"something about v-neck"</span>, <span style="color: #ffd866;">"imgId"</span>:1<span style="color: #ffd866;">}</span>,
+            <span style="color: #ffd866;">{</span><span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"scooped"</span>, <span style="color: #ffd866;">"description"</span>:<span style="color: #ffd866;">"something about scooped"</span>, <span style="color: #ffd866;">"imgId"</span>:2<span style="color: #ffd866;">}</span>
+        <span style="color: #fc9867;">]</span>
+    <span style="color: #ff6188;">}</span>,
+    <span style="color: #ff6188;">{</span>
+        <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"sleeve"</span>,
+        <span style="color: #ffd866;">"description"</span>:<span style="color: #ffd866;">"something about sleeve"</span>,
+        <span style="color: #ffd866;">"properties"</span>:<span style="color: #fc9867;">[</span>
+            <span style="color: #ffd866;">{</span><span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"long"</span>, <span style="color: #ffd866;">"description"</span>:<span style="color: #ffd866;">"something about long"</span>, <span style="color: #ffd866;">"imgId"</span>:3<span style="color: #ffd866;">}</span>,
+            <span style="color: #ffd866;">{</span><span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"short"</span>, <span style="color: #ffd866;">"description"</span>:<span style="color: #ffd866;">"something about short"</span>, <span style="color: #ffd866;">"imgId"</span>:4<span style="color: #ffd866;">}</span>
+        <span style="color: #fc9867;">]</span>
+    <span style="color: #ff6188;">}</span>
+<span style="color: #ff6188;">]</span>
+
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org6dc9ff7"></a>garment ref#3<br />
+<div class="outline-text-5" id="text-2-3-1-4">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"garmentId"</span>:1,
+    <span style="color: #ffd866;">"name"</span>: <span style="color: #ffd866;">"something"</span>, 
+    <span style="color: #ffd866;">"description"</span>: <span style="color: #ffd866;">"long sleeve"</span>, 
+    <span style="color: #ffd866;">"brand"</span>:<span style="color: #ffd866;">"addidas"</span>, 
+    <span style="color: #ffd866;">"price"</span>: 1000.99,
+    <span style="color: #ffd866;">"categoryId"</span>:1,
+    <span style="color: #ffd866;">"images"</span>: <span style="color: #ff6188;">[</span>
+        image1, 
+        image2 
+    <span style="color: #ff6188;">]</span>
+    <span style="color: #ffd866;">"properties"</span>:<span style="color: #ff6188;">[</span>1,2,3<span style="color: #ff6188;">]</span> <span style="color: #727072;">// </span><span style="color: #727072; font-style: italic;">the IDs of the selected properties</span>
+<span style="color: #ff6188;">}</span>
+
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org48bc081"></a>garments ref#4<br />
+<div class="outline-text-5" id="text-2-3-1-5">
+<div class="org-src-container">
+<pre class="src src-js">
+<span style="color: #ff6188;">[</span><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"garmentId"</span>:1,
+    <span style="color: #ffd866;">"name"</span>: <span style="color: #ffd866;">"something"</span>, 
+    <span style="color: #ffd866;">"description"</span>: <span style="color: #ffd866;">"long sleeve"</span>, 
+    <span style="color: #ffd866;">"brand"</span>:<span style="color: #ffd866;">"addidas"</span>, 
+    <span style="color: #ffd866;">"price"</span>: 1000.99,
+    <span style="color: #ffd866;">"categoryId"</span>:1,
+    <span style="color: #ffd866;">"images"</span>: <span style="color: #fc9867;">[</span>image1, image2<span style="color: #fc9867;">]</span>,
+    <span style="color: #ffd866;">"properties"</span>:<span style="color: #fc9867;">[</span>
+        <span style="color: #ffd866;">{</span><span style="color: #ffd866;">"groupId"</span>:1, <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"neckline"</span> <span style="color: #ffd866;">"property"</span>:<span style="color: #a9dc76;">{</span><span style="color: #ffd866;">"propertyId"</span>:1, <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"v-neck"</span><span style="color: #a9dc76;">}</span><span style="color: #ffd866;">}</span>,
+        <span style="color: #ffd866;">{</span><span style="color: #ffd866;">"groupId"</span>:1, <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"sleeve"</span> <span style="color: #ffd866;">"property"</span>:<span style="color: #a9dc76;">{</span><span style="color: #ffd866;">"propertyId"</span>:1, <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"long"</span><span style="color: #a9dc76;">}</span><span style="color: #ffd866;">}</span>,
+    <span style="color: #fc9867;">]</span> 
+<span style="color: #ff6188;">}</span>,<span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"garmentId"</span>:2,
+    <span style="color: #ffd866;">"name"</span>: <span style="color: #ffd866;">"something else"</span>, 
+    <span style="color: #ffd866;">"description"</span>: <span style="color: #ffd866;">"short sleeve"</span>, 
+    <span style="color: #ffd866;">"brand"</span>:<span style="color: #ffd866;">"addidas"</span>, 
+    <span style="color: #ffd866;">"price"</span>: 1000.99,
+    <span style="color: #ffd866;">"categoryId"</span>:1,
+    <span style="color: #ffd866;">"images"</span>: <span style="color: #fc9867;">[</span>image1, image2<span style="color: #fc9867;">]</span>,
+    <span style="color: #ffd866;">"properties"</span>:<span style="color: #fc9867;">[</span>
+        <span style="color: #ffd866;">{</span><span style="color: #ffd866;">"groupId"</span>:1, <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"neckline"</span> <span style="color: #ffd866;">"property"</span>:<span style="color: #a9dc76;">{</span><span style="color: #ffd866;">"propertyId"</span>:1, <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"v-neck"</span><span style="color: #a9dc76;">}</span><span style="color: #ffd866;">}</span>,
+        <span style="color: #ffd866;">{</span><span style="color: #ffd866;">"groupId"</span>:1, <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"sleeve"</span> <span style="color: #ffd866;">"property"</span>:<span style="color: #a9dc76;">{</span><span style="color: #ffd866;">"propertyId"</span>:1, <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"long"</span><span style="color: #a9dc76;">}</span><span style="color: #ffd866;">}</span>,
+    <span style="color: #fc9867;">]</span> 
+<span style="color: #ff6188;">}</span><span style="color: #ff6188;">]</span> 
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org07c8111"></a>store ref#5<br />
+<div class="outline-text-5" id="text-2-3-1-6">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"somestore"</span>, 
+    <span style="color: #ffd866;">"location"</span>:<span style="color: #ff6188;">[</span>
+        <span style="color: #fc9867;">{</span><span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>, <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>, <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"somestreet"</span>, <span style="color: #ffd866;">"housenumber"</span>:34<span style="color: #fc9867;">}</span>,
+        <span style="color: #fc9867;">{</span><span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>, <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>, <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"somestreet"</span>, <span style="color: #ffd866;">"housenumber"</span>:34<span style="color: #fc9867;">}</span>
+    <span style="color: #ff6188;">]</span>
+<span style="color: #ff6188;">}</span>
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org36801ed" class="outline-4">
+<h4 id="org36801ed"><span class="section-number-4">2.3.2</span> end points</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>METHOD</b></th>
+<th scope="col" class="org-left"><b>END POINTS</b></th>
+<th scope="col" class="org-left"><b>REQUEST</b></th>
+<th scope="col" class="org-left"><b>RESPONSE</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">POST</td>
+<td class="org-left">/store</td>
+<td class="org-left">body(ref#5)</td>
+<td class="org-left">ref#0</td>
+</tr>
+
+<tr>
+<td class="org-left">GET</td>
+<td class="org-left">/store</td>
+<td class="org-left">parameters(StoreId=)</td>
+<td class="org-left">ref#0</td>
+</tr>
+
+<tr>
+<td class="org-left">PUT</td>
+<td class="org-left">/store</td>
+<td class="org-left">body(ref#5)</td>
+<td class="org-left">ref#0</td>
+</tr>
+
+<tr>
+<td class="org-left">DELETE</td>
+<td class="org-left">/store</td>
+<td class="org-left">parameters(StoreId=)</td>
+<td class="org-left">ref#0</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">GET</td>
+<td class="org-left">/category</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">ref#1</td>
+</tr>
+
+<tr>
+<td class="org-left">GET</td>
+<td class="org-left">/property</td>
+<td class="org-left">parameters(categoryid=)</td>
+<td class="org-left">ref#2</td>
+</tr>
+
+<tr>
+<td class="org-left">POST</td>
+<td class="org-left">/garment</td>
+<td class="org-left">body(ref#3)</td>
+<td class="org-left">ref#0</td>
+</tr>
+
+<tr>
+<td class="org-left">PUT</td>
+<td class="org-left">/garment</td>
+<td class="org-left">body(ref#3)</td>
+<td class="org-left">ref#0</td>
+</tr>
+
+<tr>
+<td class="org-left">DELETE</td>
+<td class="org-left">/garment</td>
+<td class="org-left">parameters(garmentId=)</td>
+<td class="org-left">ref#0</td>
+</tr>
+
+<tr>
+<td class="org-left">GET</td>
+<td class="org-left">/garment</td>
+<td class="org-left">parameters(StoreId=, CategoryId=, Searchkeyword=)</td>
+<td class="org-left">ref#4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org526d067" class="outline-3">
+<h3 id="org526d067"><span class="section-number-3">2.4</span> web client (admin)</h3>
+<div class="outline-text-3" id="text-2-4">
+</div>
+<div id="outline-container-orgba834ae" class="outline-4">
+<h4 id="orgba834ae"><span class="section-number-4">2.4.1</span> entities</h4>
+<div class="outline-text-4" id="text-2-4-1">
+</div>
+<ol class="org-ol">
+<li><a id="org729e7d3"></a>status ref#0<br />
+<div class="outline-text-5" id="text-2-4-1-1">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">{</span><span style="color: #ffd866;">"status"</span>:<span style="color: #ffd866;">"success"</span><span style="color: #ff6188;">}</span>
+
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orga3aba7e"></a>create user ref#1<br />
+<div class="outline-text-5" id="text-2-4-1-2">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"email"</span>:<span style="color: #ffd866;">"moamen@gmail.com"</span>,
+    <span style="color: #ffd866;">"password"</span>:<span style="color: #ffd866;">"aamm-1970"</span>,
+    <span style="color: #ffd866;">"firstname"</span>:<span style="color: #ffd866;">"moamen"</span>,
+    <span style="color: #ffd866;">"lastname"</span>:<span style="color: #ffd866;">"hraden"</span>,
+    <span style="color: #ffd866;">"birthdate"</span>:<span style="color: #ffd866;">"1997-05-01"</span>,
+    <span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>,
+    <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>,
+    <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"mainStreet"</span>,
+    <span style="color: #ffd866;">"hausnumber"</span>:34,
+    <span style="color: #ffd866;">"permissions"</span>:<span style="color: #ff6188;">[]</span>
+<span style="color: #ff6188;">}</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgbfde3ac"></a>list of  users ref#2<br />
+<div class="outline-text-5" id="text-2-4-1-3">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">[</span>
+    <span style="color: #ff6188;">{</span>
+        <span style="color: #ffd866;">"email"</span>:<span style="color: #ffd866;">"moamen@gmail.com"</span>,
+        <span style="color: #ffd866;">"firstname"</span>:<span style="color: #ffd866;">"moamen"</span>,
+        <span style="color: #ffd866;">"lastname"</span>:<span style="color: #ffd866;">"hraden"</span>,
+        <span style="color: #ffd866;">"birthdate"</span>:<span style="color: #ffd866;">"1997-05-01"</span>,
+        <span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>,
+        <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>,
+        <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"mainStreet"</span>,
+        <span style="color: #ffd866;">"hausnumber"</span>:34,
+        <span style="color: #ffd866;">"permissions"</span>:<span style="color: #fc9867;">[]</span>
+    <span style="color: #ff6188;">}</span>,
+    <span style="color: #ff6188;">{</span>
+        <span style="color: #ffd866;">"email"</span>:<span style="color: #ffd866;">"moamen@gmail.com"</span>,
+        <span style="color: #ffd866;">"firstname"</span>:<span style="color: #ffd866;">"moamen"</span>,
+        <span style="color: #ffd866;">"lastname"</span>:<span style="color: #ffd866;">"hraden"</span>,
+        <span style="color: #ffd866;">"birthdate"</span>:<span style="color: #ffd866;">"1997-05-01"</span>,
+        <span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>,
+        <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>,
+        <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"mainStreet"</span>,
+        <span style="color: #ffd866;">"hausnumber"</span>:34,
+        <span style="color: #ffd866;">"permissions"</span>:<span style="color: #fc9867;">[]</span>
+    <span style="color: #ff6188;">}</span>
+<span style="color: #ff6188;">]</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgf8e6251"></a>store ref#3<br />
+<div class="outline-text-5" id="text-2-4-1-4">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">[</span>
+    <span style="color: #ff6188;">{</span>
+        <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"somestore"</span>, 
+        <span style="color: #ffd866;">"location"</span>:<span style="color: #fc9867;">[</span>
+            <span style="color: #ffd866;">{</span><span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>, <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>, <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"somestreet"</span>, <span style="color: #ffd866;">"housenumber"</span>:34<span style="color: #ffd866;">}</span>,
+            <span style="color: #ffd866;">{</span><span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>, <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>, <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"somestreet"</span>, <span style="color: #ffd866;">"housenumber"</span>:34<span style="color: #ffd866;">}</span>
+        <span style="color: #fc9867;">]</span>,
+        <span style="color: #ffd866;">"user"</span>:<span style="color: #fc9867;">{</span>
+            <span style="color: #ffd866;">"email"</span>:<span style="color: #ffd866;">"moamen@gmail.com"</span>,
+            <span style="color: #ffd866;">"firstname"</span>:<span style="color: #ffd866;">"moamen"</span>,
+            <span style="color: #ffd866;">"lastname"</span>:<span style="color: #ffd866;">"hraden"</span>,
+            <span style="color: #ffd866;">"birthdate"</span>:<span style="color: #ffd866;">"1997-05-01"</span>,
+            <span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>,
+            <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>,
+            <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"mainStreet"</span>,
+            <span style="color: #ffd866;">"hausnumber"</span>:34,
+            <span style="color: #ffd866;">"permissions"</span>:<span style="color: #ffd866;">[]</span>
+        <span style="color: #fc9867;">}</span>,
+    <span style="color: #ff6188;">}</span>
+<span style="color: #ff6188;">]</span>
+
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orga981ea4"></a>edit store ref#4<br />
+<div class="outline-text-5" id="text-2-4-1-5">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #ff6188;">{</span>
+    <span style="color: #ffd866;">"id"</span>:1,
+    <span style="color: #ffd866;">"name"</span>:<span style="color: #ffd866;">"somestore"</span>, 
+    <span style="color: #ffd866;">"location"</span>:<span style="color: #ff6188;">[</span>
+        <span style="color: #fc9867;">{</span><span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>, <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>, <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"somestreet"</span>, <span style="color: #ffd866;">"housenumber"</span>:34<span style="color: #fc9867;">}</span>,
+        <span style="color: #fc9867;">{</span><span style="color: #ffd866;">"country"</span>:<span style="color: #ffd866;">"jordan"</span>, <span style="color: #ffd866;">"city"</span>:<span style="color: #ffd866;">"amman"</span>, <span style="color: #ffd866;">"street"</span>:<span style="color: #ffd866;">"somestreet"</span>, <span style="color: #ffd866;">"housenumber"</span>:34<span style="color: #fc9867;">}</span>
+    <span style="color: #ff6188;">]</span>
+<span style="color: #ff6188;">}</span>
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgdb3b4a3" class="outline-4">
+<h4 id="orgdb3b4a3"><span class="section-number-4">2.4.2</span> end points</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>METHOD</b></th>
+<th scope="col" class="org-left"><b>END POINTS</b></th>
+<th scope="col" class="org-left"><b>REQUEST</b></th>
+<th scope="col" class="org-left"><b>RESPONSE</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">POST</td>
+<td class="org-left"><i>user</i></td>
+<td class="org-left">body(ref#1)</td>
+<td class="org-left">ref#0</td>
+</tr>
+
+<tr>
+<td class="org-left">PUT</td>
+<td class="org-left"><i>user</i></td>
+<td class="org-left">body(ref#1)</td>
+<td class="org-left">ref#0</td>
+</tr>
+
+<tr>
+<td class="org-left">DELETE</td>
+<td class="org-left"><i>user</i></td>
+<td class="org-left">parameters(UserId=)</td>
+<td class="org-left">ref#0</td>
+</tr>
+
+<tr>
+<td class="org-left">GET</td>
+<td class="org-left"><i>user</i></td>
+<td class="org-left">parameters(Searchkeyword=)</td>
+<td class="org-left">ref#2</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">GET</td>
+<td class="org-left"><i>store</i></td>
+<td class="org-left">parameters(Searchkeyword=, approved=boolean)</td>
+<td class="org-left">ref#3</td>
+</tr>
+
+<tr>
+<td class="org-left">PUT</td>
+<td class="org-left"><i>store</i></td>
+<td class="org-left">body(ref#4)</td>
+<td class="org-left">ref#0</td>
+</tr>
+
+<tr>
+<td class="org-left">DELETE</td>
+<td class="org-left"><i>store</i></td>
+<td class="org-left">parameters(StoreId=)</td>
+<td class="org-left">ref#0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org8d57792" class="outline-3">
+<h3 id="org8d57792"><span class="section-number-3">2.5</span> Questions</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>put vs patch</li>
+<li>get vs post</li>
+<li>url parameters or request parameters</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org80f582c" class="outline-2">
+<h2 id="org80f582c"><span class="section-number-2">3</span> DATABASE</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org8ef63c0" class="outline-3">
-<h3 id="org8ef63c0"><span class="section-number-3">3.1</span> Database Design</h3>
+<div id="outline-container-orge555e1d" class="outline-3">
+<h3 id="orge555e1d"><span class="section-number-3">3.1</span> Database Design</h3>
 <div class="outline-text-3" id="text-3-1">
 
-<div id="orgd8d97b0" class="figure">
+<div id="orge24e62f" class="figure">
 <p><img src="./assets/db.png" alt="db.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>This is the caption for the next figure link (or table)</p>
@@ -500,96 +1038,96 @@ response : {data:{}, status:}
 </div>
 </div>
 </div>
-<div id="outline-container-orgc99174b" class="outline-2">
-<h2 id="orgc99174b"><span class="section-number-2">4</span> FRONTEND ( flutter )</h2>
+<div id="outline-container-org2e901c1" class="outline-2">
+<h2 id="org2e901c1"><span class="section-number-2">4</span> FRONTEND ( flutter )</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgbd629b4" class="outline-3">
-<h3 id="orgbd629b4"><span class="section-number-3">4.1</span> Prototype</h3>
+<div id="outline-container-org598a6ff" class="outline-3">
+<h3 id="org598a6ff"><span class="section-number-3">4.1</span> Prototype</h3>
 <div class="outline-text-3" id="text-4-1">
 </div>
-<div id="outline-container-orge3c0290" class="outline-4">
-<h4 id="orge3c0290"><span class="section-number-4">4.1.1</span> Signup Page</h4>
+<div id="outline-container-orgf6c9735" class="outline-4">
+<h4 id="orgf6c9735"><span class="section-number-4">4.1.1</span> Signup Page</h4>
 <div class="outline-text-4" id="text-4-1-1">
 
-<div id="orga38a6a0" class="figure">
+<div id="org8ca77b1" class="figure">
 <p><img src="./frontend/img/signup-page.png" alt="signup-page.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org959c1db" class="outline-4">
-<h4 id="org959c1db"><span class="section-number-4">4.1.2</span> Login Page</h4>
+<div id="outline-container-org5d50b98" class="outline-4">
+<h4 id="org5d50b98"><span class="section-number-4">4.1.2</span> Login Page</h4>
 <div class="outline-text-4" id="text-4-1-2">
 
-<div id="orgdb79ea9" class="figure">
+<div id="org9db3db2" class="figure">
 <p><img src="./frontend/img/login-page.png" alt="login-page.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgdfff14d" class="outline-4">
-<h4 id="orgdfff14d"><span class="section-number-4">4.1.3</span> Home Page</h4>
+<div id="outline-container-orga078a64" class="outline-4">
+<h4 id="orga078a64"><span class="section-number-4">4.1.3</span> Home Page</h4>
 <div class="outline-text-4" id="text-4-1-3">
 
-<div id="orgf34a2a8" class="figure">
+<div id="org0344a14" class="figure">
 <p><img src="./frontend/img/HomePage.png" alt="HomePage.png" />
 </p>
 <p><span class="figure-number">Figure 4: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org84a12db" class="outline-4">
-<h4 id="org84a12db"><span class="section-number-4">4.1.4</span> Categories</h4>
+<div id="outline-container-org09dab24" class="outline-4">
+<h4 id="org09dab24"><span class="section-number-4">4.1.4</span> Categories</h4>
 <div class="outline-text-4" id="text-4-1-4">
 
-<div id="org0ae2d5f" class="figure">
+<div id="orgda8d787" class="figure">
 <p><img src="./frontend/img/categories.png" alt="categories.png" />
 </p>
 <p><span class="figure-number">Figure 5: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orge712b8f" class="outline-4">
-<h4 id="orge712b8f"><span class="section-number-4">4.1.5</span> Search Page</h4>
+<div id="outline-container-orgb8b4e88" class="outline-4">
+<h4 id="orgb8b4e88"><span class="section-number-4">4.1.5</span> Search Page</h4>
 <div class="outline-text-4" id="text-4-1-5">
 
-<div id="orgb27ac0f" class="figure">
+<div id="orgca22a7a" class="figure">
 <p><img src="./frontend/img/search-page.png" alt="search-page.png" />
 </p>
 <p><span class="figure-number">Figure 6: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf2ca619" class="outline-4">
-<h4 id="orgf2ca619"><span class="section-number-4">4.1.6</span> Favorites Page</h4>
+<div id="outline-container-orgcf1cf70" class="outline-4">
+<h4 id="orgcf1cf70"><span class="section-number-4">4.1.6</span> Favorites Page</h4>
 <div class="outline-text-4" id="text-4-1-6">
 
-<div id="orgeb1ffd6" class="figure">
+<div id="org0f120c1" class="figure">
 <p><img src="./frontend/img/likes-page.png" alt="likes-page.png" />
 </p>
 <p><span class="figure-number">Figure 7: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org06d0623" class="outline-4">
-<h4 id="org06d0623"><span class="section-number-4">4.1.7</span> Details Page</h4>
+<div id="outline-container-org7da14af" class="outline-4">
+<h4 id="org7da14af"><span class="section-number-4">4.1.7</span> Details Page</h4>
 <div class="outline-text-4" id="text-4-1-7">
 
-<div id="orga96ef42" class="figure">
+<div id="org140995c" class="figure">
 <p><img src="./frontend/img/details.png" alt="details.png" />
 </p>
 <p><span class="figure-number">Figure 8: </span>This is the caption for the next figure link (or table)</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd271c67" class="outline-4">
-<h4 id="orgd271c67"><span class="section-number-4">4.1.8</span> Profile Page</h4>
+<div id="outline-container-orgb28b552" class="outline-4">
+<h4 id="orgb28b552"><span class="section-number-4">4.1.8</span> Profile Page</h4>
 <div class="outline-text-4" id="text-4-1-8">
 
-<div id="org767e113" class="figure">
+<div id="org8348289" class="figure">
 <p><img src="./frontend/img/profile.png" alt="profile.png" />
 </p>
 <p><span class="figure-number">Figure 9: </span>This is the caption for the next figure link (or table)</p>
@@ -598,11 +1136,11 @@ response : {data:{}, status:}
 </div>
 </div>
 
-<div id="outline-container-org832de5f" class="outline-3">
-<h3 id="org832de5f"><span class="section-number-3">4.2</span> Project Structure</h3>
+<div id="outline-container-orgad862dd" class="outline-3">
+<h3 id="orgad862dd"><span class="section-number-3">4.2</span> Project Structure</h3>
 <div class="outline-text-3" id="text-4-2">
 
-<div id="org46c9ce7" class="figure">
+<div id="org392581a" class="figure">
 <p><img src="./frontend/img/filestructure.png" alt="filestructure.png" />
 </p>
 <p><span class="figure-number">Figure 10: </span>This is the caption for the next figure link (or table)</p>
@@ -611,15 +1149,15 @@ response : {data:{}, status:}
 </div>
 </div>
 
-<div id="outline-container-orgac40882" class="outline-2">
-<h2 id="orgac40882"><span class="section-number-2">5</span> BACKEND ( Asp.Net Core )</h2>
+<div id="outline-container-org83b7b27" class="outline-2">
+<h2 id="org83b7b27"><span class="section-number-2">5</span> BACKEND ( Asp.Net Core )</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgcc25ee5" class="outline-3">
-<h3 id="orgcc25ee5"><span class="section-number-3">5.1</span> Arechitectural Design</h3>
+<div id="outline-container-orga090c07" class="outline-3">
+<h3 id="orga090c07"><span class="section-number-3">5.1</span> Arechitectural Design</h3>
 <div class="outline-text-3" id="text-5-1">
 
-<div id="orgc4d2339" class="figure">
+<div id="org4096a41" class="figure">
 <p><img src="./backend/img/architecture.png" alt="architecture.png" />
 </p>
 <p><span class="figure-number">Figure 11: </span>This is the caption for the next figure link (or table)</p>
@@ -627,11 +1165,11 @@ response : {data:{}, status:}
 </div>
 </div>
 
-<div id="outline-container-orgd70d8d9" class="outline-3">
-<h3 id="orgd70d8d9"><span class="section-number-3">5.2</span> Arechitectural Design Level 2</h3>
+<div id="outline-container-org4e372a8" class="outline-3">
+<h3 id="org4e372a8"><span class="section-number-3">5.2</span> Arechitectural Design Level 2</h3>
 <div class="outline-text-3" id="text-5-2">
 
-<div id="orgb1cff84" class="figure">
+<div id="org3de0a5c" class="figure">
 <p><img src="./backend/img/architecture-level2.png" alt="architecture-level2.png" />
 </p>
 <p><span class="figure-number">Figure 12: </span>This is the caption for the next figure link (or table)</p>
@@ -639,28 +1177,28 @@ response : {data:{}, status:}
 </div>
 </div>
 
-<div id="outline-container-org419d986" class="outline-3">
-<h3 id="org419d986"><span class="section-number-3">5.3</span> Business Logic</h3>
+<div id="outline-container-org7db6c7a" class="outline-3">
+<h3 id="org7db6c7a"><span class="section-number-3">5.3</span> Business Logic</h3>
 <div class="outline-text-3" id="text-5-3">
 </div>
-<div id="outline-container-orga743556" class="outline-4">
-<h4 id="orga743556"><span class="section-number-4">5.3.1</span> background process</h4>
+<div id="outline-container-orgb2cd792" class="outline-4">
+<h4 id="orgb2cd792"><span class="section-number-4">5.3.1</span> background process</h4>
 <div class="outline-text-4" id="text-5-3-1">
 </div>
 <ol class="org-ol">
-<li><a id="org660895e"></a>illustration<br />
+<li><a id="orgfa062d5"></a>illustration<br />
 <div class="outline-text-5" id="text-5-3-1-1">
 
-<div id="orgca108dd" class="figure">
+<div id="org6714eec" class="figure">
 <p><img src="./backend/img/backgroundprocess.png" alt="backgroundprocess.png" />
 </p>
 </div>
 </div>
 </li>
-<li><a id="org76fb967"></a>sequence diagram<br />
+<li><a id="org9a7bc57"></a>sequence diagram<br />
 <div class="outline-text-5" id="text-5-3-1-2">
 
-<div id="org864b247" class="figure">
+<div id="org9a71828" class="figure">
 <p><img src="./backend/img/backgroundprocesssequence.png" alt="backgroundprocesssequence.png" />
 </p>
 </div>
@@ -672,7 +1210,7 @@ response : {data:{}, status:}
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2021-11-21 Sun 09:43</p>
+<p class="date">Created: 2021-11-21 Sun 22:37</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

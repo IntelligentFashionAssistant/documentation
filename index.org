@@ -7,81 +7,364 @@
    SCHEDULED: <2021-11-21 Sun>
 **  TODO interface design 
    SCHEDULED: <2021-11-22 Mon>
+**  TODO frontend widget to insert garments 
+   SCHEDULED: <2021-11-21 Sun>
+**  TODO frontend widget to filter results 
+SCHEDULED: <2021-11-21 Sun>
+**  TODO add garment fk to propertyfeedback 
+SCHEDULED: <2021-11-21 Sun>
 ** integration test
 * REST API DESIGN
-response : {data:{}, status:}
-** entities
-*** UserEntity 
+** general
+- each message should look like
 #+begin_src js
   {
-      "email":"moamen@gmail.com",
-      "password":"aamm-1970",
-      "firstname":"moamen",
-      "lastname":"hraden",
-      "birthdate":"1997-05-01",
-      "country":"jordan",
-      "city":"amman",
-      "street":"mainStreet",
-      "hausnumber":34
+      "status":"success"|"failure",
+      "message":"ex: user does not exist",
+      "data" : {...} | [ {} ... {}]
   }
-#+end_src
+      #+end_src
+** mobile client  
+*** entities 
+**** status ref#0
+     #+begin_src js
+       {
+	   "status":"SUCCESS"
+       }
+     #+end_src
+**** User ref#1 
+ #+begin_src js
+   {
+       "userId":0,
+       "email":"moamen@gmail.com",
+       "password":"hashed password",
+       "firstname":"moamen",
+       "lastname":"hraden",
+       "birthdate":"1997-05-01",
+       "country":"jordan",
+       "city":"amman",
+       "street":"mainStreet",
+       "hausnumber":34
+   }
+ #+end_src
 
-*** BodySizesEntity 
-#+begin_src js
-  {
-      "shoulder": 20, 
-      "bust":20, 
-      "hip":20,
-      "waist":20
-  }
-    #+end_src
-*** GarmentEntity
-    #+begin_src js
-      {
-	  "name": "something", 
-	  "description": "long sleeve", 
-	  "brand":"addidas", 
-	  "price": 1000.99
-	  "images": [
-	      image1, 
-	      image2 
-	  ],
-	  "stores": [
-	      { "name":"somestore", 
-		"location":[
-		    {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34},
-		    {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34}
-		]
-	      },
-	      { "name":"somestore2", 
-		"location":[
-		    {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34},
-		    {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34}
-		]
-	      }
-	  ]
+**** login data ref#2
+     #+begin_src js
+       {
+	   "email": "TheSuperAdminKenan@gmail.com",
+	   "password":"hased password"
+       }
 
-      }
-    #+end_src
+	      #+end_src
+**** login token ref#3
+     #+begin_src js
+       {
+	   "status":"success",
+	   "token":"AOLDKJFAOSLDKFJAOLDFKJA"
+       }
 
-** problems 
+     #+end_src
+**** User with his body sizes ref#4 
+ #+begin_src js
+   {
+       "userId":0,
+       "email":"moamen@gmail.com",
+       "password":"hashed password",
+       "firstname":"moamen",
+       "lastname":"hraden",
+       "birthdate":"1997-05-01",
+       "country":"jordan",
+       "city":"amman",
+       "street":"mainStreet",
+       "hausnumber":34,
+       "bodysizes":{
+	   "userId":1,
+	   "shoulder": 20, 
+	   "bust":20, 
+	   "hip":20,
+	   "waist":20
+       }
+   }
+ #+end_src
+
+**** Garment  ref#5 
+     #+begin_src js
+       [{
+	   "name": "something", 
+	   "description": "long sleeve", 
+	   "brand":"addidas", 
+	   "price": 1000.99,
+	   "category":"top",
+	   "images": [
+	       image1, 
+	       image2 
+	   ],
+	   "stores": [
+	       { "name":"somestore", 
+		 "location":[
+		     {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34},
+		     {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34}
+		 ]
+	       },
+	       { "name":"somestore2", 
+		 "location":[
+		     {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34},
+		     {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34}
+		 ]
+	       }
+	   ]
+
+       }]
+     #+end_src
+	   
+**** GarmentRating ref#6
+     #+begin_src js
+       {
+	   "userId":1, 
+	   "garmentId":1,
+	   "rating":[
+	       {"propertyId":1, "rating":50%},
+	       {"propertyId":2, "rating":40%},
+	       {"propertyId":3, "rating":70%}
+	   ]
+       }
+     #+end_src
+**** StoreRating ref#7
+     #+begin_src js
+       {
+	   "storeId":1,
+	   "header":"very good",
+	   "body": "it is realy very goood :) ",
+	   "rating":50%
+       }
+     #+end_src
+
+*** end points
+    |----------+------------------+------------------------------------------------+------------|
+    | *Method* | *End Points*     | *Request*                                      | *Response* |
+    |----------+------------------+------------------------------------------------+------------|
+    | POST     | \/user\/register | body(ref#1)                                    | ref#0      |
+    | POST     | \/user\/login    | body(ref#2)                                    | ref#3      |
+    | PUT      | \/user\/         | body(ref#4)                                    | ref#0      |
+    | GET      | \/user\/         | parameters(UserId=)                            | ref#4      |
+    |----------+------------------+------------------------------------------------+------------|
+    | GET      | \/garment\/      | __                                             | ref#5      |
+    | GET      | \/garment\/      | parameters(UserId=, category=, Searchkeyword=) | ref#5      |
+    | POST     | \/garment\/rate  | body(ref#6)                                    | ref#0      |
+    | POST     | \/store\/rate    | body(ref#7)                                    | ref#0      |
+    |----------+------------------+------------------------------------------------+------------|
+
+** web client (shopowner)
+*** entities
+**** status ref#0
+     #+begin_src js
+       {
+	   "status":"SUCCESS"
+       }
+     #+end_src
+**** categories ref#1
+     #+begin_src js
+       [
+	   {"name":"TOP", "description":"description of top"},
+	   {"name":"PANTS", "description":"description of pants"}
+       ]
+       #+end_src
+**** groups and properties ref#2
+     #+begin_src js
+       [
+	   {
+	       "name":"neckline",
+	       "description":"something about neckline",
+	       "properties":[
+		   {"name":"V-Neck", "description":"something about v-neck", "imgId":1},
+		   {"name":"scooped", "description":"something about scooped", "imgId":2}
+	       ]
+	   },
+	   {
+	       "name":"sleeve",
+	       "description":"something about sleeve",
+	       "properties":[
+		   {"name":"long", "description":"something about long", "imgId":3},
+		   {"name":"short", "description":"something about short", "imgId":4}
+	       ]
+	   }
+       ]
+
+     #+end_src
+**** garment ref#3 
+     #+begin_src js
+       {
+	   "garmentId":1,
+	   "name": "something", 
+	   "description": "long sleeve", 
+	   "brand":"addidas", 
+	   "price": 1000.99,
+	   "categoryId":1,
+	   "images": [
+	       image1, 
+	       image2 
+	   ]
+	   "properties":[1,2,3] // the IDs of the selected properties
+       }
+
+       #+end_src
+**** garments ref#4 
+     #+begin_src js
+
+       [{
+	   "garmentId":1,
+	   "name": "something", 
+	   "description": "long sleeve", 
+	   "brand":"addidas", 
+	   "price": 1000.99,
+	   "categoryId":1,
+	   "images": [image1, image2],
+	   "properties":[
+	       {"groupId":1, "name":"neckline" "property":{"propertyId":1, "name":"v-neck"}},
+	       {"groupId":1, "name":"sleeve" "property":{"propertyId":1, "name":"long"}},
+	   ] 
+       },{
+	   "garmentId":2,
+	   "name": "something else", 
+	   "description": "short sleeve", 
+	   "brand":"addidas", 
+	   "price": 1000.99,
+	   "categoryId":1,
+	   "images": [image1, image2],
+	   "properties":[
+	       {"groupId":1, "name":"neckline" "property":{"propertyId":1, "name":"v-neck"}},
+	       {"groupId":1, "name":"sleeve" "property":{"propertyId":1, "name":"long"}},
+	   ] 
+       }] 
+     #+end_src
+**** store ref#5
+     #+begin_src js
+       {
+	   "name":"somestore", 
+	   "location":[
+	       {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34},
+	       {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34}
+	   ]
+       }
+     #+end_src
+*** end points
+    |----------+--------------+---------------------------------------------------+------------|
+    | *METHOD* | *END POINTS* | *REQUEST*                                         | *RESPONSE* |
+    |----------+--------------+---------------------------------------------------+------------|
+    | POST     | /store       | body(ref#5)                                       | ref#0      |
+    | GET      | /store       | parameters(StoreId=)                              | ref#0      |
+    | PUT      | /store       | body(ref#5)                                       | ref#0      |
+    | DELETE   | /store       | parameters(StoreId=)                              | ref#0      |
+    |----------+--------------+---------------------------------------------------+------------|
+    | GET      | /category    |                                                   | ref#1      |
+    | GET      | /property    | parameters(categoryid=)                           | ref#2      |
+    | POST     | /garment     | body(ref#3)                                       | ref#0      |
+    | PUT      | /garment     | body(ref#3)                                       | ref#0      |
+    | DELETE   | /garment     | parameters(garmentId=)                            | ref#0      |
+    | GET      | /garment     | parameters(StoreId=, CategoryId=, Searchkeyword=) | ref#4      |
+    |----------+--------------+---------------------------------------------------+------------|
+
+** web client (admin)
+*** entities 
+**** status ref#0
+     #+begin_src js
+{"status":"success"}
+
+     #+end_src
+**** create user ref#1
+     #+begin_src js
+       {
+	   "email":"moamen@gmail.com",
+	   "password":"aamm-1970",
+	   "firstname":"moamen",
+	   "lastname":"hraden",
+	   "birthdate":"1997-05-01",
+	   "country":"jordan",
+	   "city":"amman",
+	   "street":"mainStreet",
+	   "hausnumber":34,
+	   "permissions":[]
+       }
+     #+end_src
+**** list of  users ref#2
+     #+begin_src js
+       [
+	   {
+	       "email":"moamen@gmail.com",
+	       "firstname":"moamen",
+	       "lastname":"hraden",
+	       "birthdate":"1997-05-01",
+	       "country":"jordan",
+	       "city":"amman",
+	       "street":"mainStreet",
+	       "hausnumber":34,
+	       "permissions":[]
+	   },
+	   {
+	       "email":"moamen@gmail.com",
+	       "firstname":"moamen",
+	       "lastname":"hraden",
+	       "birthdate":"1997-05-01",
+	       "country":"jordan",
+	       "city":"amman",
+	       "street":"mainStreet",
+	       "hausnumber":34,
+	       "permissions":[]
+	   }
+       ]
+     #+end_src
+**** store ref#3 
+     #+begin_src js
+       [
+	   {
+	       "name":"somestore", 
+	       "location":[
+		   {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34},
+		   {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34}
+	       ],
+	       "user":{
+		   "email":"moamen@gmail.com",
+		   "firstname":"moamen",
+		   "lastname":"hraden",
+		   "birthdate":"1997-05-01",
+		   "country":"jordan",
+		   "city":"amman",
+		   "street":"mainStreet",
+		   "hausnumber":34,
+		   "permissions":[]
+	       },
+	   }
+       ]
+
+     #+end_src
+**** edit store ref#4
+     #+begin_src js
+       {
+	   "id":1,
+	   "name":"somestore", 
+	   "location":[
+	       {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34},
+	       {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34}
+	   ]
+       }
+     #+end_src
+*** end points
+    |----------+--------------+----------------------------------------------+------------|
+    | *METHOD* | *END POINTS* | *REQUEST*                                    | *RESPONSE* |
+    |----------+--------------+----------------------------------------------+------------|
+    | POST     | /user/       | body(ref#1)                                  | ref#0      |
+    | PUT      | /user/       | body(ref#1)                                  | ref#0      |
+    | DELETE   | /user/       | parameters(UserId=)                          | ref#0      |
+    | GET      | /user/       | parameters(Searchkeyword=)                   | ref#2      |
+    |----------+--------------+----------------------------------------------+------------|
+    | GET      | /store/      | parameters(Searchkeyword=, approved=boolean) | ref#3      |
+    | PUT      | /store/      | body(ref#4)                                  | ref#0      |
+    | DELETE   | /store/      | parameters(StoreId=)                         | ref#0      |
+    |----------+--------------+----------------------------------------------+------------|
+** Questions 
    - put vs patch 
-   - get vs post 
-** End points
-   |---------------+------------------+-------------------------------+-----------------------------|
-   | *Method*      | *End Points*     | *Request*                     | *Response*                  |
-   |---------------+------------------+-------------------------------+-----------------------------|
-   | post          | /user/register   | body(UserEntity)              | status:success              |
-   | post          | /user/login      | body(email, password)         | data: token, status:success |
-   | put (patch??) | /user/           | body(Userentity, UserId)      | status:success              |
-   | post          | /user/profile    | body(bodySizesentity, UserId) | status:success              |
-   | get           | /user/profile    | parameters(UserId)            | userentity, Bodysizesentity |
-   | put           | /user/profile    | body(bodysizesentity, UserId) | status:success              |
-   |---------------+------------------+-------------------------------+-----------------------------|
-   | get           | /garment/:UserId | __                            | list of Garmententity       |
-   | get           | /garment/:UserId | parameters(category=)         | list of Garmententity       |
-   | get           | /garment/:UserId | parameters(searchkeyword=)    | list of Garmententity       |
-   |---------------+------------------+-------------------------------+-----------------------------|
+   - get vs post
+   - url parameters or request parameters 
 * DATABASE
 ** Database Design
 #+CAPTION: This is the caption for the next figure link (or table)
