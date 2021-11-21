@@ -1,13 +1,96 @@
 #+TITLE: IFA : Intelligent Fashion Assistant
 #+SETUPFILE: /home/moamen/new-git/ifa/documentation/assets/theme/theme-readtheorg-local.setup
 
+* TASKS 
+**  TODO rest api design 
+   SCHEDULED: <2021-11-21 Sun>
+**  TODO interface design 
+   SCHEDULED: <2021-11-22 Mon>
+** integration test
 * REST API DESIGN
-|-----------------+----------------------------------------|
-| *end points*    | *Data*                                 |
-|-----------------+----------------------------------------|
-| \/garments\/    | {status: , data: [list of garments ] } |
-| \/garments\/:id | {status: , data: garment}              |
-|-----------------+----------------------------------------|
+response : {data:{}, status:}
+** entities
+*** UserEntity 
+- email
+- password
+- firstname
+- lastname
+- birthdate
+- country
+- city
+- street
+- hausnumber
+
+#+begin_src js
+  {
+      "email":"moamen@gmail.com",
+      "password":"aamm-1970",
+      "firstname":"moamen",
+      "lastname":"hraden",
+      "birthdate":"1997-05-01",
+      "country":"jordan",
+      "city":"amman",
+      "street":"mainStreet",
+      "hausnumber":34
+  }
+#+end_src
+
+*** BodySizesEntity 
+#+begin_src js
+  {
+      "shoulder": 20, 
+      "bust":20, 
+      "hip":20,
+      "waist":20
+  }
+    #+end_src
+*** GarmentEntity
+    #+begin_src js
+      {
+	  "name": "something", 
+	  "description": "long sleeve", 
+	  "brand":"addidas", 
+	  "price": 1000.99
+	  "images": [
+	      image1, 
+	      image2 
+	  ],
+	  "stores": [
+	      { "name":"somestore", 
+		"location":[
+		    {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34},
+		    {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34}
+		]
+	      },
+	      { "name":"somestore2", 
+		"location":[
+		    {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34},
+		    {"country":"jordan", "city":"amman", "street":"somestreet", "housenumber":34}
+		]
+	      }
+	  ]
+
+      }
+    #+end_src
+
+** problems 
+   - put vs patch 
+   - get vs post 
+** End points
+   |---------------+------------------+-------------------------------+-----------------------------|
+   | *Method*      | *End Points*     | *Request*                     | *Response*                  |
+   |---------------+------------------+-------------------------------+-----------------------------|
+   | post          | /user/register   | body(UserEntity)              | status:success              |
+   | post          | /user/login      | body(email, password)         | data: token, status:success |
+   | put (patch??) | /user/           | body(Userentity, UserId)      | status:success              |
+   | post          | /user/profile    | body(bodySizesentity, UserId) | status:success              |
+   | get           | /user/profile    | parameters(UserId)            | userentity, Bodysizesentity |
+   | put           | /user/profile    | body(bodysizesentity, UserId) | status:success              |
+   |---------------+------------------+-------------------------------+-----------------------------|
+   | get           | /garment/:UserId | __                            | list of Garmententity       |
+   | get           | /garment/:UserId | parameters(category=)         | list of Garmententity       |
+   | get           | /garment/:UserId | parameters(searchkeyword=)    | list of Garmententity       |
+   |---------------+------------------+-------------------------------+-----------------------------|
 * DATABASE
 ** Database Design
 #+CAPTION: This is the caption for the next figure link (or table)
@@ -63,3 +146,10 @@
 #+CAPTION: This is the caption for the next figure link (or table)
 #+NAME:   fig:SED-HR4049
 [[./backend/img/architecture-level2.png]]
+
+** Business Logic 
+*** background process
+**** illustration
+[[./backend/img/backgroundprocess.png]]
+**** sequence diagram
+[[./backend/img/backgroundprocesssequence.png]]
