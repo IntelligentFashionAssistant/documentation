@@ -1,5 +1,6 @@
 #+TITLE: IFA : Intelligent Fashion Assistant
 #+SETUPFILE: /home/moamen/new-git/ifa/documentation/assets/theme/theme-readtheorg-local.setup
+#+setup: imageinline
 
 * TASKS 
 **  TODO rest api design 
@@ -11,16 +12,6 @@
 response : {data:{}, status:}
 ** entities
 *** UserEntity 
-- email
-- password
-- firstname
-- lastname
-- birthdate
-- country
-- city
-- street
-- hausnumber
-
 #+begin_src js
   {
       "email":"moamen@gmail.com",
