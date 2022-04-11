@@ -120,15 +120,17 @@ SCHEDULED: <2021-11-21 Sun>
 	   
 **** GarmentRating ref#6
      #+begin_src js
-       {
-	   "userId":1, 
-	   "garmentId":1,
-	   "rating":[
-	       {"propertyId":1, "rating":50%},
-	       {"propertyId":2, "rating":40%},
-	       {"propertyId":3, "rating":70%}
-	   ]
-       }
+       // x y z 
+       // rate
+	      {
+		  "userId":1, 
+		  "garmentId":1,
+		  "rating":[
+		      {"propertyId":1, "rating":50%},
+		      {"propertyId":2, "rating":40%},
+		      {"propertyId":3, "rating":70%}
+		  ]
+	      }
      #+end_src
 **** StoreRating ref#7
      #+begin_src js
@@ -141,19 +143,19 @@ SCHEDULED: <2021-11-21 Sun>
      #+end_src
 
 *** end points
-    |----------+------------------+------------------------------------------------+------------|
-    | *Method* | *End Points*     | *Request*                                      | *Response* |
-    |----------+------------------+------------------------------------------------+------------|
-    | POST     | \/user\/register | body(ref#1)                                    | ref#0      |
-    | POST     | \/user\/login    | body(ref#2)                                    | ref#3      |
-    | PUT      | \/user\/         | body(ref#4)                                    | ref#0      |
-    | GET      | \/user\/         | parameters(UserId=)                            | ref#4      |
-    |----------+------------------+------------------------------------------------+------------|
-    | GET      | \/garment\/      | __                                             | ref#5      |
-    | GET      | \/garment\/      | parameters(UserId=, category=, Searchkeyword=) | ref#5      |
-    | POST     | \/garment\/rate  | body(ref#6)                                    | ref#0      |
-    | POST     | \/store\/rate    | body(ref#7)                                    | ref#0      |
-    |----------+------------------+------------------------------------------------+------------|
+    |----------+-----------------+------------------------------------------------+------------|
+    | *Method* | *End Points*    | *Request*                                      | *Response* |
+    |----------+-----------------+------------------------------------------------+------------|
+    | POST     | /user/register/ | body(ref#1)                                    | ref#0      |
+    | POST     | /user/login/    | body(ref#2)                                    | ref#3      |
+    | PUT      | /user/          | body(ref#4)                                    | ref#0      |
+    | GET      | /user/          | parameters(UserId=)                            | ref#4      |
+    |----------+-----------------+------------------------------------------------+------------|
+    | GET      | /garment/       | __                                             | ref#5      |
+    | GET      | /garment/       | parameters(UserId=, category=, Searchkeyword=) | ref#5      |
+    | POST     | /garment/rate/  | body(ref#6)                                    | ref#0      |
+    | POST     | /store/rate/    | body(ref#7)                                    | ref#0      |
+    |----------+-----------------+------------------------------------------------+------------|
 
 ** web client (shopowner)
 *** entities
@@ -248,7 +250,9 @@ SCHEDULED: <2021-11-21 Sun>
 	   ]
        }
      #+end_src
-*** end points
+***  TODO end points
+- add missing routes
+- Important : delete end point  does not delete the data from database. it just disable it
     |----------+--------------+---------------------------------------------------+------------|
     | *METHOD* | *END POINTS* | *REQUEST*                                         | *RESPONSE* |
     |----------+--------------+---------------------------------------------------+------------|
@@ -371,6 +375,11 @@ SCHEDULED: <2021-11-21 Sun>
 #+CAPTION: This is the caption for the next figure link (or table)
 #+NAME:   fig:SED-HR4049
 [[./assets/db.png]]
+
+- favorites
+- sizes ( when inserting garment) 
+- sizes conversion 
+- favorites, garment -> garmentDto with favorite attr.
 * FRONTEND ( flutter )
 ** Prototype 
 *** Signup Page 
@@ -428,3 +437,4 @@ SCHEDULED: <2021-11-21 Sun>
 [[./backend/img/backgroundprocess.png]]
 **** sequence diagram
 [[./backend/img/backgroundprocesssequence.png]]
+
